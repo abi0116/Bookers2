@@ -1,0 +1,8 @@
+<h2>New Book</h2>
+<%= form_with model:book,local:true do |f| %>
+  <label for="title">Title</label>
+  <%= f.text_field :title,autofocus: true,id:"title",placeholder:"本のタイトル" %>
+  <label for="opinion">Opinion</label>
+  <%= f.text_area :body,autofocus: true,id:"opinion",placeholder:"感想" %>
+  <%= f.submit "Create Book" %>
+<% end %>

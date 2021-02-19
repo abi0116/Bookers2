@@ -1,0 +1,20 @@
+<%= render "layouts/error_form",model: @user %>
+<%= render "user_info",user: @user %>
+<%= render "books/new",book: @book %>
+<h2>Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th><h4>image</h4></th>
+      <th><h4>name</h4></th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+    <td><%= attachment_image_tag user,:profile_image,:fill,100,100,format: "jpeg",fallback: "no_image.jpg" %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "show",user_path(user.id) %></td>
+  </tbody>
+  <% end %>
+</table>
