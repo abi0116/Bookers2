@@ -1,11 +1,22 @@
-<h2>Editing Book</h2>
-<%= render "layouts/error_form",model: @book %>
-<%= form_with model:@book,local:true do |f| %>
-  <label for="title">Title</label>
-  <%= f.text_field :title,autofocus: true,id:"title",placeholder:"本のタイトル" %>
-  <label for="opinion">Opinion</label>
-  <%= f.text_area :body,autofocus: true,id:"opinion",placeholder:"感想" %>
-  <%= f.submit "Update Book" %>
-<% end %>
-  <%= link_to "show",book_path(@book) %>
-  <%= link_to "back",books_path %>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-lg-5 mx-auto">
+      <h2>Editing Book</h2>
+      <%= render "layouts/error_form",model: @book %>
+      <%= form_with model:@book,local:true do |f| %>
+        <div class = "form-group">
+          <label for="title">Title</label>
+          <%= f.text_field :title,autofocus: true,id:"title",placeholder:"本のタイトル",class: "form-control" %>
+        </div>
+        <div class = "form-group">
+          <label for="opinion">Opinion</label>
+          <%= f.text_area :body,autofocus: true,id:"opinion",placeholder:"感想",class: "form-control" %>
+        </div>
+        <%= f.submit "Update Book",class: "btn btn-success" %>
+      <% end %>
+      <%= link_to "Show",book_path(@book) %>
+      |
+      <%= link_to "Back",books_path %>
+    </div>
+  </div>
+</div>
